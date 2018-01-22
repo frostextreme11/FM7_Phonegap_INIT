@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+            -->
+            <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+            <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'unsafe-inline' data: *; object-src *; style-src 'unsafe-inline' data: *; img-src * data: *; media-src *; frame-src *; font-src 'self' data: fonts.gstatic.com;; connect-src *">            
+
+            <!-- Required meta tags-->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <meta name="format-detection" content="telephone=no">
+            <meta name="msapplication-tap-highlight" content="no">
+
+            <!-- Your app title -->
+            <title>NLinkCoreX1</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+    -->
+
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+    <link rel="icon" href="img/f7-icon.png">
+</head>
+
+<body style='opacity:0;'>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="left">
+                  <a href="#" class="link icon-only panel-open" data-panel="left">
+                    <i class="icon f7-icons ios-only">menu</i>
+                    <i class="icon material-icons md-only">menu</i>
+                </a>
+            </div>
+            <div class="title sliding">Framework7</div>
+            <div class="right">
+              <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+                <i class="icon f7-icons ios-only">search_strong</i>
+                <i class="icon material-icons md-only">search</i>
+            </a>
+        </div>
+        <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search" placeholder="Search components"/>
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+          </div>
+          <span class="searchbar-disable-button">Cancel</span>
+      </div>
+  </form>
+</div>
+</div>
+<!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+<div class="view view-main view-init ios-edges">
+    <!-- Page, "data-page" contains page name -->
+    <div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link menu">
+          <i class="icon icon-menu"></i> 
+          <span class="ios-only">Menu</span>
+        </a>
+      </div>
+      <div class="title">NLink</div>
+    </div>
+  </div>
+  <div class="toolbar tabbar">
+    <div class="toolbar-inner">
+      <a href="#tab-1" class="tab-link tab-link-active">
+        <i class="icon icon-fill f7-icons ios-only">email_fill<span class="badge color-green">5</span></i>
+        <i class="icon material-icons md-only">assessment<span class="badge color-green">5</span></i>
+        <span class="tabbar-label">Order</span>
+      </a>
+      <a href="#tab-2" class="tab-link">
+        <i class="icon f7-icons ios-only">today<span class="badge color-red">7</span></i>
+        <i class="icon material-icons md-only">today<span class="badge color-red">7</span></i>
+        <span class="tabbar-label">Timeline</span>
+      </a>
+      <a href="#tab-3" class="tab-link">
+        <i class="icon f7-icons ios-only">cloud<span class="badge color-yellow">1</span></i>
+        <i class="icon material-icons md-only">person_pin<span class="badge color-orange">1</span></i>
+        <span class="tabbar-label">User</span>
+      </a>
+    </div>
+  </div>
+  <div class="tabs-swipeable-wrap">
+    <div class="tabs">
+      <div id="tab-1" class="page-content tab tab-active">
+        <div class="block">
+          <div>
+            <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+              <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                  <input type="search" placeholder="Search"/>
+                  <i class="searchbar-icon"></i>
+                  <span class="input-clear-button"></span>
+                </div>
+                <span class="searchbar-disable-button">Cancel</span>
+              </div>
+            </form>
+          </div>
+          <div class="searchbar-backdrop"></div>
+          <div class="list simple-list searchbar-not-found">
+            <ul>
+              <li>Nothing found</li>
+            </ul>
+          </div>
+          <div class="list search-list searchbar-found">
+            <ul>
+              <li>
+                <a href="#" class="item-link item-content">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Mr</div>
+                      John Doe
+                      <div class="item-footer">Lexus</div>
+                    </div>
+                    <div class="item-after"><span class="badge color-blue">CALM</span></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="item-link item-content">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Mrs</div>
+                      Carrol
+                      <div class="item-footer">HJS</div>
+                    </div>
+                    <div class="item-after"><span class="badge color-red">ANGRY</span></div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="tab-2" class="page-content tab">
+        <div class="block">
+          <div class="card demo-facebook-card">
+            <div class="card-header">
+              <div class="demo-facebook-avatar"><img src="http://lorempixel.com/68/68/people/1/" width="34" height="34"></div>
+              <div class="demo-facebook-name">John Doe</div>
+              <div class="demo-facebook-date">Monday at 3:47 PM</div>
+            </div>
+            <div class="card-content card-content-padding">
+              <div class="chip color-red">
+                <div class="chip-label">Red Chip</div>
+              </div>
+              <div class="chip color-green">
+                <div class="chip-label">Green Chip</div>
+              </div>
+              <div class="chip color-blue">
+                <div class="chip-label">Blue Chip</div>
+              </div>
+              <div class="chip color-orange">
+                <div class="chip-label">Orange Chip</div>
+              </div>
+              <div class="chip color-pink">
+                <div class="chip-label">Pink Chip</div>
+              </div>
+            </div>
+            <div class="card-footer"><a href="#" class="link">Edit</a><a href="#" class="link">Quick Add</a><a href="#" class="link">Priority</a></div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-3" class="page-content tab">
+        <div class="block">
+          <div>
+            <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+              <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                  <input type="search" placeholder="Search"/>
+                  <i class="searchbar-icon"></i>
+                  <span class="input-clear-button"></span>
+                </div>
+                <span class="searchbar-disable-button">Cancel</span>
+              </div>
+            </form>
+          </div>
+          <div class="searchbar-backdrop"></div>
+          <div class="list simple-list searchbar-not-found">
+            <ul>
+              <li>Nothing found</li>
+            </ul>
+          </div>
+          <div class="list search-list searchbar-found">
+            <ul>
+              <li>
+                <a href="#" class="item-link item-content">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Mr</div>
+                      John Doe
+                      <div class="item-footer">Home</div>
+                    </div>
+                    <div class="item-after"><span class="badge color-blue">CALM</span></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="item-link item-content">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Mrs</div>
+                      Carrol
+                      <div class="item-footer">Home</div>
+                    </div>
+                    <div class="item-after"><span class="badge color-red">ANGRY</span></div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fab fab-right-bottom">
+    <a href="#">
+      <i class="icon f7-icons ios-only">add</i>
+      <i class="icon f7-icons ios-only">close</i>
+      <i class="icon material-icons md-only">add</i>
+      <i class="icon material-icons md-only">close</i>
+    </a>
+    <div class="fab-buttons fab-buttons-top">
+      <a href="">User</a>
+      <a href="">Timeline</a>
+      <a href="">Order</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript"  src="js/firebase-app.js"></script>
+<script type="text/javascript"  src="js/firebase-auth.js"></script>
+<script type="text/javascript"  src="js/firebase-database.js"></script>
+<script type="text/javascript"  src="js/firebase-messaging.js"></script>
+
+<script type="text/javascript"  src="js/jquery-slim-min.js"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript"  src="js/routes.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
